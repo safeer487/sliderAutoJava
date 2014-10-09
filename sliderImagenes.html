@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#slide{
+	width:640px;
+	height:480px;
+	margin:0 auto;
+	margin-top: 40px;
+	background-color: red;
+	}
+	#imgCambiante{
+		width: 640px;
+		height: 480px;
+	}
+	</style>
+</head>
+<body>
+	<div id="slide">
+		<img src="" alt="Imagen de naturaleza" id="imgCambiante">
+
+	</div>
+	<script>
+	var elemImg = document.getElementById('imgCambiante');
+	var aImg = new Array();
+	var iMar = 0;
+	aImg.push('img/nature1.jpg');
+	aImg.push('img/nature2.jpg');
+	aImg.push('img/nature3.jpg');
+	aImg.push('img/nature4.jpg');
+	aImg.push('img/nature5.jpg');
+	
+	elemImg.setAttribute('src', aImg[0]);
+
+	function cambiarRuta(){
+		elemImg.setAttribute('src', aImg[iMar]);
+		iMar++;
+		if (iMar >= aImg.length) {
+			iMar = 0;
+		}
+	}
+		
+	setInterval('cambiarRuta()', 2000);
+
+
+
+
+	</script>
+
+
+</body>
+</html>
